@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+  <div class="image__div">
+    <img class="background__image" src="../images/bg-main-desktop.png" alt="">
+  </div>
+
+  <div id="main__container">
+
+    <div>
+      <div>
+        <img id="front-card-image" src="../images/bg-card-front.png" alt="">
+        <div id="front-card-output" class="card-output">
+
+          <img src="../images/card-logo.svg" alt="">
+
+          <div class="front-card-output-placement">
+
+            <div id="output-card-number">0000 0000 0000 0000</div>
+
+            <div class="card-output-flex">
+              <div id="output-card-name">DOMINIC GREGORIO</div>
+              <div id="output-card-monthyear">00/00</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div>
+        <div>
+          <img id="back-card-image" src="../images/bg-card-back.png" alt="">
+          <div id="back-card-output" class="card-output">
+            <div id="output-card-cvc">000</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cardholder__container">
+
+      <div class="cardholder_detail">
+        <p class="cardholder-title">CARDHOLDER NAME</p>
+        <div class="input-check">
+          <input type="text" class="" id="input-card-name" placeholder="e.g Dominic Gregorio" onkeyup="nameValidation()"
+            onkeypress="return /[0-9a-zA-Z ]/i.test(event.key)">
+          <img class="checked-icon" id="input-name-checked" src="../images/checked.png" alt="">
+        </div>
+        <div class="error-input" id="error-card-name">append</div>
+      </div>
+
+      <div class="cardholder_detail">
+        <p class="cardholder-title">CARD NUMBER</p>
+
+        <div class="input-check">
+          <input type="text" id="input-card-number" placeholder="e.g 9876 5432 1987 0000" maxlength="19"
+            onkeyup="numberValidation()">
+          <img class="checked-icon" id="input-number-checked" src="../images/checked.png" alt="">
+        </div>
+        <div class="error-input" id="error-card-number">append</div>
+      </div>
+
+      <div class="card__date__cvc_flex cardholder_detail">
+
+        <div>
+          <p class="cardholder-title">EXP. DATE (MM/YY)</p>
+          <div class="date-year-flex">
+
+            <div class="input-check">
+
+              <input type="text" id="input-card-month" class="input-month-year" maxlength="2" placeholder="MM"
+                onkeypress='return event.charCode >= 48 && event.charCode <= 57' onkeyup="monthValidation()">
+              <img class="checked-icon checked-month" id="input-month-checked" src="../images/checked.png" alt="">
+
+            </div>
+
+            <div class="input-check">
+
+              <input type="text" id="input-card-year" class="input-month-year" maxlength="2" placeholder="YY"
+                onkeypress='return event.charCode >= 48 && event.charCode <= 57' onkeyup="yearValidation()">
+              <img class="checked-icon checked-year" id="input-year-checked" src="../images/checked.png" alt="">
+
+            </div>
+
+          </div>
+          <div class="error-input" id="error-card-month-year">append</div>
+        </div>
+
+        <div>
+          <p class="cardholder-title">CVC</p>
+
+          <div class="input-check">
+
+            <input type="text" id="input-card-cvc" class="input-cvc" maxlength="3" placeholder="e.g 123"
+              onkeypress='return event.charCode >= 48 && event.charCode <= 57' onkeyup="cvcValidation()">
+            <img class="checked-icon" id="input-cvc-checked" src="../images/checked.png" alt="">
+
+          </div>
+
+          <div class="error-input" id="error-card-cvc">append</div>
+        </div>
+
+      </div>
+
+      <button id="confirm-button">Confirm</button>
+      <div class="error-input" id="error-proceed">append</div>
+
+    </div>
+
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+
+</html>
